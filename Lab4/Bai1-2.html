@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="shortcut icon" href="/hinh/logo.png"/>
+    <title>Bài 1-2</title>
+</head>
+<body ng-app="myApp">
+    <div class="container" ng-controller="myCtrl">
+       <div class="row">
+        <div class="col-sm-6" style="padding-left: 4cm;">
+        <img src="{{sv.poto}}" width="300" height="400">
+       </div>
+       <div class="col-sm-6">
+            <h1 style="margin-top: 100px;">Thông tin sinh viên</h1>
+            <ul style="line-height: 40px; font-size: 20px;">
+                <li>Họ và tên: {{sv.fullname}}</li>
+                <li>Email: {{sv.email}}</li>
+                <li>Ngày sinh: {{sv.birthday}}</li>
+                <li>Giới tính: {{sv.gender}} </li>
+                <li>Điểm trung bình: <a style="color: rgb(255, 56, 56); font-weight: bold;">{{sv.marks}}</a> </li>
+            </ul>
+       </div>
+    </div>
+</div>
+   <script>
+    var app = angular.module("myApp",[]);
+    app.controller("myCtrl",function($scope){
+        $scope.sv = {
+        fullname: "Võ Văn Hoàng Hữu",
+        email: "huuvvhpd06670",
+        birthday: "20-11-2003",
+        gender :"Nam",
+        marks: "10",
+        poto:"/hinh/ongvang.jfif"
+    }  
+    });
+   </script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+.shopping-mall{
+    bottom: 20px;
+    font-variant: small-caps;
+}
+.shopping-mall>h1{
+   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+   font-size: 50px;
+   color: rgb(232, 42, 42);
+   letter-spacing: 0.3px;
+   text-shadow: 0 0 2px black;
+   padding-bottom: 0px;
+   border-bottom:1px dotted gray ;
+   margin: 1px;
+}
+.shopping-mall>h5{
+    margin-top: 5px;
+    letter-spacing: 0.5px;
+}
+
+

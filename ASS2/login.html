@@ -1,0 +1,38 @@
+<div class="container my-5" id="content">
+    <div  class="col-9 mx-auto">
+      <div class="modal-body">
+        <form name="frmLogin" class="row">
+          <div class="col-12">
+            <label class="mt-3">Tài Khoản</label>
+            <input type="text" class="form-control" name="username" placeholder="abc..." ng-model="login.username"
+              required />
+            <small class="text-danger d-block pt-1"
+              ng-hide="frmLogin.username.$untouched || frmLogin.username.$valid">Vui
+              lòng nhập tài khoản</small>
+          </div>
+          <div class="col-12">
+            <label class="mt-3">Mật khẩu <span class="text-danger">*</span></label>
+            <input type="password" class="form-control" name="password" placeholder="******" ng-model="login.password"
+              required />
+            <small class="text-danger d-block pt-1"
+              ng-hide="frmLogin.password.$untouched || frmLogin.password.$valid">Vui
+              lòng nhập mật khẩu</small>
+          </div>
+          <div class="col-6 mb-3">
+            <div class="form-check mt-3">
+              <input class="form-check-input" type="checkbox" />
+              <label class="form-check-label pt-1">Ghi nhớ!</label>
+            </div>
+          </div>
+          <div class="col-6 mb-3">
+            <a class="float-right mt-3" data-toggle="modal" data-target="#ForgotPassword">Quên mật khẩu?</a>
+          </div>
+          <div class="col-12">
+            <button class="btn btn-primary my-3" ng-click="login()">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+</div>
+   

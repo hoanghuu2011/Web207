@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+  <title>Online Training</title>
+  <link rel="stylesheet" href="/ASS2/fontawesome-free-6.2.1-web/css/all.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  <script src="https://code.angularjs.org/1.8.2/angular-route.min.js"></script>
+  <script src="js/app.js"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+   <script src="js/sweetalert2.all.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.2/dist/sweetalert2.all.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.2/dist/sweetalert2.min.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  <script src="https://code.angularjs.org/1.8.2/angular-route.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <style>
+    .container-fluid,
+    .container-lg,
+    .container-md,
+    .container-sm,
+    .container-xl {
+      width: 100%;
+      padding-right: 0px;
+      padding-left: 0px;
+      margin-right: auto;
+      margin-left: auto;
+    }
+
+    @media (min-width: 1200px) {
+      .container {
+        max-width: 1170px;
+      }
+    }
+
+    body {
+      background-color: #f6f6f6;
+      background-color: #f1f3fe;
+    }
+
+    a {
+      text-decoration: none !important;
+    }
+
+    a:hover {
+      color: #09f500 !important;
+    }
+
+    .navbar li a {
+      display: block;
+      padding: 13px 20px 11px;
+      margin: 0px;
+      font-size: 14px;
+      font-weight: 600;
+      text-transform: uppercase;
+      color: #000000;
+      border: 2px solid transparent;
+      position: relative;
+    }
+
+    .navbar .home {
+      border: 2px solid #002ffffb;
+      border-radius: 3px;
+    }
+
+    .navbar .home a:focus,
+    .navbar .home a:hover {
+      color: #2c2c2c !important;
+    }
+
+    .dropdown-item.active,
+    .dropdown-item:active {
+      color: #000000 !important;
+      background-color: #f90101 !important;
+    }
+
+    .sticky {
+      position: fixed;
+      top: 0;
+      z-index: 1 !important;
+      width: 100%;
+      box-shadow: 0 3px 10px 0 rgba(115, 143, 147, 0.3);
+    }
+
+    .sticky2 {
+      padding-top: 4.313rem;
+    }
+
+    /* .sticky2 {
+            padding-top: 6rem;
+        } */
+
+    .spacer {
+      height: 6px;
+      width: 49px;
+      background-color: #23B5E1;
+    }
+
+    .subjects h2 {
+      font-size: 42px;
+      font-weight: 300;
+      line-height: 1.52;
+      margin-top: 24px;
+      margin-bottom: 40px;
+    }
+
+    .subjects-item {
+      margin-bottom: 40px;
+      border-radius: 4px;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: stretch;
+      min-height: 200px;
+      position: relative;
+    }
+
+    .subjects-item-image {
+      width: 200px;
+      background-color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-top-left-radius: 4px;
+      border-bottom-left-radius: 4px;
+      flex-shrink: 0;
+    }
+
+    .subjects-item-text {
+      background-color: #fff;
+      padding: 30px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      flex-grow: 1;
+    }
+
+    .subjects-item-text-main {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-grow: 1;
+    }
+
+    .subjects-item-title-subtext {
+      font-size: 12px;
+      line-height: 18px;
+      opacity: .5;
+      margin-top: 4px;
+    }
+
+
+    .btn-primary-gradient {
+      text-transform: uppercase;
+      padding: 13px 21px;
+      border: none;
+      font-size: 15px;
+      font-weight: 400;
+      letter-spacing: 1.25px;
+      font-stretch: normal;
+      background: linear-gradient(153deg, #45dbf2, #23B5E1);
+      color: #fff;
+
+    }
+
+    .btn-primary-gradient:hover {
+      color: #fff !important;
+      background: linear-gradient(153deg, #007bff, #bfff01);
+    }
+
+    /* .grad:hover {
+      color: #343a40 !important;
+      background-color: transparent !important;
+      border-color: #343a40;
+    } */
+
+    /* .card {
+            border-top: 3px solid #0facce;
+            padding-bottom: 12px;
+        }
+
+        .card li {
+            padding-bottom: 0px;
+        }
+
+        .card .col {
+            padding-left: 0;
+        }
+
+        .card img {
+            border-radius: 3px
+        } */
+
+    /* .footer {
+            padding-top: 50px;
+            padding-bottom: 50px;
+            color: #99979c;
+            background-color: #2a2730;
+            margin-top: 30px;
+        }
+
+        .footer a {
+            color: white;
+        }
+
+        .footer a:focus,
+        .footer a:hover {
+            color: white !important;
+            text-decoration: underline !important;
+        }
+
+        .footer p {
+            margin-bottom: 0rem !important;
+        } */
+
+    .btn-primary:hover {
+      background: #f50505;
+      color: #e8eaef;
+    }
+
+    footer>div>div:nth-child(2) h6 {
+      text-decoration: underline;
+      color: #f7941d;
+    }
+
+    .btn {
+      font-size: 16px;
+      padding: 15px 40px;
+    }
+
+    .form-control {
+      height: 60px;
+
+    }
+  </style>
+
+</head>
+
+<body ng-app="myApp" ng-controller="myProfile">
+  <header>
+    <div class="container">
+      <div class="row my-2">
+        <div class="col">
+          <a href="index.html">
+            <img src="images/logo.png" alt="" class="img-fluid" title="FPT Polytechnic DN" width="150">
+          </a>
+        </div>
+        <div class="col-12 col-sm-auto my-auto">
+          <a href="mailto:huuvvhpd06670@fpt.edu.vn" title="Email" class="text-dark">
+            <i class="far fa-envelope"></i>
+            huuvvhpd06670@fpt.edu.vn
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid" id="navbar">
+      <nav class="navbar navbar-expand-lg" style="background-color: #f93131;">
+        <div class="container">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item home active">
+                <a class="nav-link" href="#/!" title="Trang chủ"><i class="fas fa-home"></i>
+                  Trang chủ <span class="sr-only"></span></a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="#!subjects">Môn học <span class="sr-only"></span></a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="#!gioithieu">Giới thiệu <span class="sr-only"></span></a>
+              </li>
+              <li class="nav-item active dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                  aria-haspopup="true" aria-expanded="false">
+                  Hỗ trợ
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="#!lienhe">Liên hệ</a>
+
+
+                  <a class="dropdown-item" href="#!gopy">Góp ý</a>
+                </div>
+              </li>
+            </ul>
+            <!-- <ul class="navbar-nav ">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="signin.html">Đăng nhập<span
+                                        class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item active">
+                                <a class="nav-link" href="signup.html">Đăng ký<span class="sr-only">(current)</span></a>
+                            </li>
+                        </ul> -->
+            </ul>
+
+            <ul class="navbar-nav ml-auto text-center">
+              <li class="nav-item dropdown view float-left">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                  aria-haspopup="true" aria-expanded="false">
+                  <span ng-show="user == null">Tài khoản</span>
+                  <span ng-show="user != null" id="fullname">{{tenNguoiDung}}</span>
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li ng-show="user == null">
+                    <a class="dropdown-item" data-toggle="modal" data-target="#dangNhap" href="">Đăng nhập</a>
+                  </li>
+                  <li ng-show="user == null">
+                    <a class="dropdown-item" data-toggle="modal" data-target="#dangKy">Đăng ký</a>
+                  </li>
+                  <li ng-show="user != null">
+                    <a class="dropdown-item" data-toggle="modal" data-target="#taiKhoan" href="">Cập nhập tài khoản</a>
+                  </li>
+                  <li ng-show="user == null">
+                    <a class="dropdown-item" data-toggle="modal" data-target="#quenMatKhau">Quên mật khẩu</a>
+                  </li>
+                  <li ng-show="user != null">
+                    <a class="dropdown-item" data-toggle="modal" data-target="#doiMatKhau">Đổi mật khẩu</a>
+                  </li>
+                  <li ng-show="user != null">
+                    <a class="dropdown-item" href="" data-toggle="modal" data-target="#dangXuat">Đăng xuất</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+
+
+      </nav>
+    </div>
+    <!-- <div class="container-fluid col-12" id="banner" style="background-color: #ededed;">
+            <img class="img-fluid" src="images/banner.png" alt="" width="1550px">
+        </div> -->
+  </header>
+  <!-- Đăng nhập -->
+  <div class="modal fade" id="dangNhap" tabindex="-1" role="dialog" aria-hidden="true ">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content border-0 p-4">
+        <div class="modal-header border-0">
+          <h3>Đăng nhập</h3>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form name="frmLogin" class="row">
+            <div class="col-12">
+              <label class="mt-3">Tài Khoản</label>
+              <input type="text" class="form-control" name="username" placeholder="abc..." ng-model="login.username"
+                required />
+              <small class="text-danger d-block pt-1" ng-hide="frmLogin.username.$valid">Vui
+                lòng nhập tài khoản</small>
+            </div>
+            <div class="col-12">
+              <label class="mt-3">Mật khẩu <span class="text-danger">*</span></label>
+              <input type="password" class="form-control" name="password" placeholder="******" ng-model="login.password"
+                required />
+              <small class="text-danger d-block pt-1" ng-hide="frmLogin.password.$valid">Vui
+                lòng nhập mật khẩu</small>
+            </div>
+            <div class="col-12 mb-3">
+              <div class="form-check mt-3">
+                <input class="form-check-input" type="checkbox" />
+                <label class="form-check-label pt-1">Ghi nhớ!</label>
+              </div>
+            </div>
+            <div class="col-12">
+              <button class="btn btn-primary my-3" ng-click="login()">Submit</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Đăng ký tài khoản -->
+  <div class="modal fade" id="dangKy" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content rounded-0 border-0 p-4">
+        <div class="modal-header border-0">
+          <h3>Đăng ký</h3>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form name="formSignUp" class="row">
+            <div class="col-12">
+              <label class="mt-2">Tài Khoản <span class="text-danger"></span></label>
+              <input type="text" name="username" class="form-control" placeholder="abc..." ng-model="dangKy.username"
+                required />
+              <small class="text-danger d-block pt-1" ng-hide="formSignUp.username.$valid">Vui lòng nhập
+                tài khoản</small>
+            </div>
+            <div class="col-12">
+              <label class="mt-2">Mật khẩu <span class="text-danger"></span></label>
+              <input type="password" class="form-control" name="password" placeholder="******"
+                ng-model="dangKy.password" required />
+              <small class="text-danger d-block pt-1" ng-hide="formSignUp.password.$valid">Vui lòng nhập
+                mật khẩu</small>
+            </div>
+            <div class="col-12">
+              <label class="mt-2">Nhập lại mật khẩu <span class="text-danger"></span></label>
+              <input type="password" class="form-control" name="password2" placeholder="******" ng-model="password2"
+                required />
+              <small class="text-danger d-block pt-1" ng-hide="formSignUp.password2.$valid">Vui lòng
+                nhập lại mật khẩu</small>
+            </div>
+            <div class="col-12">
+              <label class="mt-2">Họ và tên <span class="text-danger"></span></label>
+              <input type="text" name="fullname" class="form-control" placeholder="Nguyễn Văn A"
+                ng-model="dangKy.fullname" required />
+              <small class="text-danger d-block pt-1" ng-hide="formSignUp.fullname.$valid">Vui lòng nhập họ và
+                tên</small>
+            </div>
+            <div class="col-12">
+              <label class="mt-2">Địa chỉ email <span class="text-danger">*</span></label>
+              <input type="email" name="email" class="form-control" placeholder="abc@gmail.com" ng-model="dangKy.email"
+                required />
+              <small class="text-danger d-block pt-1" ng-hide=" formSignUp.email.$valid">Vui
+                lòng nhập đúng email</small>
+            </div>
+            <div class="col-12">
+              <label class="mt-2">Giới tính</label>
+              <div class="row">
+                <div class="col-2">
+                  <input type="radio" ng-model="dangKy.gender" value="true" name="gender"
+                    ng-checked="stGioiTinh != true" />
+                  <label>Nam</label>
+                </div>
+                <div class="col-2">
+                  <input type="radio" ng-model="dangKy.gender" value="false" name="gender" />
+                  <label>Nữ</label>
+                </div>
+              </div>
+            </div>
+            <div class="col-12">
+              <button class="btn btn-primary my-3" ng-click="signUp()">Submit</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- taikoan -->
+  <div class="modal fade" id="taiKhoan" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content rounded-0 border-0 p-4">
+            <div class="modal-header border-0">
+                <h3>Cập nhật tài khoản</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="card-body card-body-cascade p-5">
+                  <form name="frmUpdate">
+  
+                      <div class="md-form md-outline">
+                          <span class="form-text ">Họ tên</span>
+                          <input placeholder=" " name="fullname" ng-model="tenNguoiDung" type="text" id="fullname" class="form-control " required maxlength="25" autofocus>
+                          <small ng-show="frmUpdate.fullname.$error.required" class="form-text text-danger">Vui lòng nhập họ tên</small>
+                          <small ng-show="frmUpdate.fullname.$error.maxlength" class="form-text text-danger">Không được quá 25 kí tự</small>
+  
+                      </div>
+  
+                      <div class="md-form md-outline">
+                          <span class="form-text "> Email</span>
+                          <input placeholder=" " name="email" ng-model="email" type="email" id="email" class="form-control " required>
+                          <small ng-show="frmUpdate.email.$error.required" class="form-text text-danger">Vui lòng nhập email</small>
+                          <small ng-show="frmUpdate.email.$error.email" class="form-text text-danger">Không đúng định dạng email</small>
+  
+                      </div>
+                      <label class="bg-white  rounded px-2" for=""> Giới tính:</label>
+                      <div class="form-check form-check-inline">
+                          <input ng-model="gender" type="radio" class="form-check-input" id="gender" name="gender" value="true">
+                          <label class="form-check-label light-blue-text" for="gender">Nam</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                          <input ng-model="gender" type="radio" class="form-check-input" id="gender2" name="gender" value="false">
+                          <label class="form-check-label light-blue-text" for="gender2">Nữ</label>
+                      </div>
+  
+  
+                      <div class="md-form md-outline mt-0">
+                          <span class="form-text"> Ngày sinh</span>
+                          <input placeholder="yyyy-mm-dd" name="birthday" ng-model="birthday" type="text" id="birthday" class="form-control " required pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}">
+                          <small ng-show="frmUpdate.birthday.$error.required" class="form-text text-danger">Vui lòng nhập ngày sinh</small>
+                          <small ng-show="frmUpdate.birthday.$error.pattern" class="form-text text-danger">Không đúng định dạng ngày</small>
+                      </div>
+                      <div class="text-center mt-4">
+                          <button ng-click="update()" ng-disabled="frmUpdate.$invalid" class="btn btn-danger">Thay đổi</button>
+                      </div>
+                  </form>
+  
+              </div>
+  
+            </div>
+        </div>
+    </div>
+</div>
+  <!-- đổi mạt khẩu -->
+  <div class="modal fade" id="doiMatKhau" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content rounded-0 border-0 p-4">
+            <div class="modal-header border-0">
+                <h3>Đổi mật khẩu</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form name="frmchangePass">
+                    <label class="mt-2">Tài khoản</label>
+                    <input type="text" class="form-control" name="username" value="{{user}}" disabled />
+                    <label class="mt-2">Mật khẩu hiện tại <span class="text-danger">*</span></label>
+                    <input type="password" class="form-control" name="password" placeholder="******"
+                        ng-model="dmk.password1" required />
+                    <small class="text-danger d-block pt-1"
+                        ng-hide="frmchangePass.password.$untouched || frmchangePass.password.$valid">Vui
+                        lòng nhập mật khẩu hiện tại</small>
+                    <label class="mt-2">Mật khẩu mới <span class="text-danger">*</span></label>
+                    <input type="password" class="form-control" name="password2" placeholder="******"
+                        ng-model="dmk.password2" required />
+                    <small class="text-danger d-block pt-1"
+                        ng-hide="frmchangePass.password2.$untouched || frmchangePass.password2.$valid">Vui
+                        lòng nhập mật khẩu mới</small>
+                    <div class="text-center">
+                        <button class="btn btn-primary my-3" ng-click="">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+  <!-- quên mật khẩu -->
+  <div class="modal fade" id="quenMatKhau" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content border-0 p-4">
+        <div class="modal-header">
+          <h3>Quên mật khẩu</h3>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form name="frmForgot" class="row">
+            <div class="col-12">
+              <label class="mt-3">Email <span class="text-danger"></span></label>
+              <input type="email" class="form-control" name="email" ng-model="email" required />
+              <small class="text-danger d-block pt-1" ng-hide="frmForgot.email.$valid">Vui
+                lòng nhập email của tài khoản</small>
+            </div>
+            <h6 class="col-12" style="margin-top: 1cm;">{{qmk}}</h6>
+            <div class="col-12">
+              <button class="btn btn-danger  float-right" ng-click="quenMatKhau()">Submit</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Đăng Xuất -->
+  <div class="modal fade" id="dangXuat" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content rounded-0 border-0 p-4">
+        <div class="modal-header border-0">
+          <h3>Đăng xuất</h3>
+
+        </div>
+        <div class="modal-body">Bạn có muốn đăng xuất không?</div>
+        <div class="modal-footer">
+          <button class="btn btn-primary" ng-click="dangXuat()">Đăng xuất</button>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- view page -->
+  <div ng-view></div>
+  <footer style="background-color: #1d2656; color: azure; font-size: small;">
+    <div class="row mt-4">
+      <div class="col-12 col-md-3 col-sm-12">
+        <a href="index.html">
+          <img src="images/logo.png" alt="" class="img-fluid" title="FPT Polytechnic DN"
+            style="height:80px;margin-top: 3cm; padding-left: 0.5cm;">
+        </a>
+      </div>
+      <div class="col-12 col-md-9  col-sm-12" style="margin-top:10px">
+        <h4>THÔNG TIN LIÊN HỆ</h4>
+        <p>
+          Trụ sở chính
+          Tòa nhà FPT Polytechnic, Phố Trịnh Văn Bô, Nam Từ Liêm, Hà Nội
+        </p>
+        <h4>Một vài cơ sở phổ biến</h4>
+        <div class="row">
+          <div class="col-sm-6">
+            <div>
+              <h6>Cơ sở Hà Nội</h6>
+              <p>Tòa nhà FPT Polytechnic, Phố Trịnh Văn Bô, Nam Từ Liêm, Hà Nội</p>
+              <p>(024) 7300 1955</p>
+            </div>
+            <div>
+              <h6>Cơ sở Đà Nẵng</h6>
+              <p>Số 137 Nguyễn Thị Thập, Phường Hòa Minh, Quận Liên Chiểu, TP. Đà Nẵng</p>
+              <p>(0236) 3710 999</p>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div>
+              <h6>Cơ sở Hồ Chí Minh</h6>
+              <p>391A Nam Kỳ Khởi Nghĩa, Q. 3, TP. Hồ Chí Minh</p>
+              <p>778/B1 Nguyễn Kiệm, P.4, Q. Phú Nhuận, TP. Hồ Chí Minh</p>
+              <p>Toà nhà Innovation, lô 24, Công viên phần mềm Quang Trung, Quận 12, Hồ Chí Minh</p>
+              <p>(028) 3526 8799 – (028) 62523434</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p style="text-align: center; font-size: 15px; font-weight: 600;">FPT Polytechnic &copy; 2022. Assignment Web207.
+    </p>
+  </footer>
+ 
+</body>
+
+
+</html>

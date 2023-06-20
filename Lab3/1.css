@@ -1,0 +1,44 @@
+.shopping-mall{
+    bottom: 20px;
+    font-variant: small-caps;
+}
+.shopping-mall>h1{
+   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+   font-size: 50px;
+   color: rgb(232, 42, 42);
+   letter-spacing: 0.3px;
+   text-shadow: 0 0 2px black;
+   padding-bottom: 0px;
+   border-bottom:1px dotted gray ;
+   margin: 1px;
+}
+.shopping-mall>h5{
+    margin-top: 5px;
+    letter-spacing: 0.5px;
+}
+a:visited, a:hover, a:active{
+    text-decoration: none;
+}
+.related-products{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 1.1em;
+    border-bottom: 1px dotted rgb(255, 47, 47);
+    font-weight: bold;
+}
+.product-detail-info{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 1em;
+    padding: 10px;
+    margin-left: 20px;
+}
+.product-detail-header{
+    font-size: 1.4em;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    border-bottom: 1px dotted rgb(255, 9, 9);
+}
+.product-brief{
+    border-top: 1px solid lightgreen;
+    margin-top: 7px;
+}
+

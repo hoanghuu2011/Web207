@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="shortcut icon" href="/hinh/logo.png"/>
+    <title>Bai1-Bai2</title>
+  
+</head>
+<body ng-app="myApp">
+    <div class="container">
+        <div class="row" ng-controller="form">
+            <div class="col-sm-6 mx-auto text-white">
+                <h4 class="card-header bg-success text-white">THÔNG TIN SINH VIÊN</h4>
+                <div class="bg-dark p-2">
+               <form>
+                <div class="form-group">
+                    <label >Họ và tên</label>
+                    <input ng-model="student.fullname"  class="form-control bg-dark text-white font-weight-bold" type="text" name="">
+                </div>
+                <div class="form-group">
+                    <label >Ngày sinh</label>
+                    <input ng-model="student.birthday" class="form-control  bg-dark text-white  font-weight-bold" type="text" name="">
+                </div>
+                <div class="form-group">
+                    <label >Điểm</label>
+                    <input ng-model="student.marks" class="form-control  bg-dark text-danger  font-weight-bold" type="number" min="0" max="10" name="">
+                </div>
+                <button ng-click="save()" class="btn btn-primary">Lưu </button>
+                <button ng-click="clear()" class="btn btn-primary">Hủy</button>
+               </form>
+            </div>
+            </div>
+        </div>
+        <br>
+        <div class="row" ng-controller="Ctrl">
+            <div class="col-sm-6 mx-auto">
+                <table class="table table-bordered">
+                  <tbody>
+                    <tr class="bg-danger text-center text-white">
+                    <th>Họ và tên</th>
+                    <th>Ngày sinh</th>
+                    <th>Điểm</th>
+                    <th>#</th>
+                    </tr>
+                    <tr ng-repeat ="sv in sv">
+                    <td>{{sv.fullname}}</td>
+                    <td>{{sv.birthday}}</td>
+                    <td>{{sv.marks}}</td>
+                    <td class="text-danger">Sửa</td>
+                    </tr>
+                  </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script>
+    var app = angular.module("myApp", []);
+    app.controller("Ctrl", function ($scope) {
+        $scope.$parent.sv = [
+        {
+        fullname: "Võ Văn Hoàng Hữu",
+        birthday: "20-11-2003",
+        marks: "10",
+    },  
+    {
+        fullname: "Nguyễn Thị Linh Hương",
+        birthday: "11-11-2003",
+        marks: "9",
+    },
+    {
+        fullname: "Nguyễn Văn A",
+        birthday: "1-1-2000",
+        marks: "8",
+    },
+    {
+        fullname: "Trương Thanh Hồng",
+        birthday: "15-1-2003",
+        marks: "10",
+    },  
+    {
+        fullname: "Đoàn Ngọc Quốc Việt",
+        birthday: "12-12-2003",
+        marks: "10",
+    },  
+    {
+        fullname: "Võ Thị Hoàng Quý",
+        birthday: "4-3-2003",
+        marks: "10",
+    }  
+    ] 
+    });
+    app.controller("form",function($scope){
+        $scope.$parent.student={};
+        $scope.save=function(){
+            $scope.sv.push(angular.copy($scope.student));
+        }
+        $scope.clear=function(){
+            $scope.student= {};
+        }
+    });
+    </script>
+</body>
+</html>

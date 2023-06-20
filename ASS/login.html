@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Đăng Nhập</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/angular.min.js"></script>
+  <script src="db/Subjects.js"></script>
+  <script src="js/myapp.js"></script>
+  <link rel="stylesheet" href="fontawesome-free-6.2.1-web/css/all.min.css">
+  <link rel="shortcut icon" href="images/logo.png" />
+  <style>
+    footer>div>div:nth-child(2) h6 {
+      text-decoration: underline;
+      color: #f7941d;
+    }
+  </style>
+</head>
+
+<body ng-app="myApp">
+  <div class="container">
+    <div class="row bg-danger" style="height:80px; display: flex;align-items: center;justify-content: center;">
+      <div class="col float-left" style="font-size: 20px;">
+        <a href=""><img width="12%" src="images/FPT_Polytechnic.png"></a><a href="Trangchu.html"
+          style="padding-left: 18%;color: rgb(0, 0, 0);text-decoration: none;"><i
+            class="fa-solid fa-house-chimney"></i>Trang chủ
+          <a href="Khoahoc.html" style="padding-left: 3%;color: rgb(0, 0, 0);text-decoration: none;"><i
+              class="fa-solid fa-layer-group"></i>Môn học</a>
+          <a href="gioithieu.html" style="padding-left: 3%;color: rgb(0, 0, 0);text-decoration: none;"><i
+              class="fa-solid fa-bars"></i>Giới thiệu</a>
+          <a href="lienhe.html" style="padding-left: 3%;color: rgb(0, 0, 0);text-decoration: none;"><i
+              class="fa-solid fa-phone"></i>Liên hệ</a>
+          <a href="hoidap.html"
+            style="padding-left: 3%;color: rgb(0, 0, 0);text-decoration: none;"><i class="fa-solid fa-comments"></i>Hỏi
+            đáp</a><a href="login.html" style="padding-left: 3%;color: rgb(0, 0, 0);text-decoration: none;"><i
+              class="fa-solid fa-gears"></i>Đăng
+            nhập</a></a>
+      </div>
+    </div>
+    <div class="row" style="background-color: rgb(255, 255, 255);padding-top: 1%;">
+      <div class="col-sm-9">
+        <div class="row">
+          <div class="px-5 ms-xl-4">
+              <img width="150px" src="images/FPT_Polytechnic.png">
+              <span class="h1 fw-bold mb-0">FPT Polytechnic</span>
+          </div>
+          <div class="d-flex align-items-center h-custom-2 px-5 ms-xl-4 mt-5 pt-5 pt-xl-0 mt-xl-n5">
+              <form style="width:970px;">
+                  <h3 class="fw-normal" style="letter-spacing: 1px;">ĐĂNG NHẬP</h3>
+                  <div class="form-outline mb-4">
+                      <input type="email" id="form2Example18" class="form-control form-control-lg" />
+                      <label class="form-label" for="form2Example18">Email</label>
+                  </div>
+                  <div class="form-outline mb-4">
+                      <input type="password" id="form2Example28" class="form-control form-control-lg" />
+                      <label class="form-label" for="form2Example28">Mật khẩu</label>
+                  </div>
+                  <p class=""><a href="" data-toggle="modal" data-target="#Mk">Quên mật khẩu!</a></p>
+
+                  <div class="d-flex mt-4" style="float: right;">
+                      <button type="button" class="btn btn-danger btn-lg " style="padding: 12px 28px;">Đăng nhập</button>
+                  </div>
+                  <p>Bạn chưa có tài khoản? <a href="" data-toggle="modal" data-target="#Modal">Nhấn vào đây!</a></p>
+                  <div class="modal" tabindex="-1" role="dialog" id="Modal">
+                    <form action="">
+                      <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title mx-auto">Đăng ký tài khoản</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <div class="modal-body bg-light ">
+                            <div class="row">
+                              <div class="from-group col-12">
+                                <label for="">Họ và tên:</label>
+                                <input type="text" class="form-control" placeholder="">
+                              </div>
+                              <div class="from-group col-12">
+                                <label for="">Tên đăng nhập:</label>
+                                <input type="text" class="form-control" placeholder="">
+                              </div>
+                              <div class="from-group col-12">
+                                <label for="">Mật Khẩu:</label>
+                                <input type="password" class="form-control" placeholder="">
+                              </div>
+                              <div class="from-group col-12">
+                                <label for="">Email:</label>
+                                <input type="email" class="form-control" placeholder="">
+                              </div>
+                              <div class="from-group col-12">
+                                <label for="">Giới tính:</label>
+                              </div>  
+                                <div class="form-check form-check-inline" style="padding-left: 40px;">
+                                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                                  <label class="form-check-label" for="inlineRadio1">Nam</label>
+                                  <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                                    <label class="form-check-label" for="inlineRadio2">Nữ</label>
+                                  </div>
+                                </div>
+                                <div class="from-group col-12">
+                                  <label for="">Địa chỉ:</label>
+                                  <input type="text" class="form-control" placeholder="">
+                                </div>
+                            </div>              
+                          </div>
+                          <div class="modal-footer">
+                            <div class="form group col text-right">
+                              <button type="submit" class="btn btn-default">
+                                <i class="fa-solid fa-cloud"></i> Lưu
+                              </button>
+                              <button type="submit" class="btn btn-default" data-dismiss="modal" style="background-color: #00ec00;">
+                                <i class="fa-solid fa-lock"></i>Hủy
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                  <div class="modal" tabindex="-1" role="dialog" id="Mk">
+                    <form action="">
+                      <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title mx-auto">Quên mật khẩu</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <div class="modal-body bg-light ">
+                            <div class="row">
+                              <div class="from-group col-12">
+                                <label for="">Email:</label>
+                                <input type="email" class="form-control" placeholder="">
+                              </div>
+                              <div class="from-group col-12">
+                                <label for="">Nhập mã code:</label>
+                                <input type="text" class="form-control" placeholder="">
+                              </div>
+                              <div class="from-group col-12">
+                                <label for="">Mật Khẩu mới:</label>
+                                <input type="password" class="form-control" placeholder="">
+                              </div>
+                              <div class="from-group col-12">
+                                <label for="">Nhập lại mật khẩu mới:</label>
+                                <input type="password" class="form-control" placeholder="">
+                              </div>
+                            </div>              
+                          </div>
+                          <div class="modal-footer">
+                            <div class="form group col text-right mx-auto">
+                              <button type="submit" class="btn btn-lg bg-danger"style="text-align: center;">
+                                <i class="fa-solid fa-cloud"></i> Đổi mật khẩu
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+
+
+              </form>
+          </div>
+      </div>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d30670.025937961036!2d108.17647213232424!3d16.078289690270562!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x459e4bf5a2af323e!2zVHLGsOG7nW5nIENhbyDEkeG6s25nIEZQVCBQb2x5dGVjaG5pYyDEkMOgIE7hurVuZw!5e0!3m2!1svi!2s!4v1673448706004!5m2!1svi!2s"
+          width="970" height="450" style="border:0; margin-top: 30px;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+
+      <aside class="col-sm-3 mt-4">
+        <!--Category-->
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <span class="glyphicon glyphicon-th-list"></span>
+            <strong>Danh mục</strong>
+          </div>
+          <div class="list-group" ng-controller="subjectCtrl">
+            <div ng-repeat="sub in list_subject">
+              <a href="" class="list-group-item">{{sub.Name}}</a>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+    <footer style="background-color: #192041; color: azure; font-size: small;">
+      <div class="row mt-4">
+        <div class="col-12 col-md-3 col-sm-12">
+          <a class="navbar-brand" href="">
+            <span>
+              <img src="images/FPT_Polytechnic.png" class="dark-logo" style="height:80px;margin-top: 3cm; padding-left: 0.5cm;" />
+            </span>
+          </a>
+        </div>
+        <div class="col-12 col-md-9  col-sm-12" style="margin-top:10px">
+          <h4>THÔNG TIN LIÊN HỆ</h4>
+          <p>
+            Trụ sở chính
+            Tòa nhà FPT Polytechnic, Phố Trịnh Văn Bô, Nam Từ Liêm, Hà Nội
+          </p>
+          <h4>Một vài cơ sở phổ biến</h4>
+          <div class="row">
+            <div class="col-sm-6">
+              <div>
+                <h6>Cơ sở Hà Nội</h6>
+                <p>Tòa nhà FPT Polytechnic, Phố Trịnh Văn Bô, Nam Từ Liêm, Hà Nội</p>
+                <p>(024) 7300 1955</p>
+              </div>
+              <div>
+                <h6>Cơ sở Đà Nẵng</h6>
+                <p>Số 137 Nguyễn Thị Thập, Phường Hòa Minh, Quận Liên Chiểu, TP. Đà Nẵng</p>
+                <p>(0236) 3710 999</p>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div>
+                <h6>Cơ sở Hồ Chí Minh</h6>
+                <p>391A Nam Kỳ Khởi Nghĩa, Q. 3, TP. Hồ Chí Minh</p>
+                <p>778/B1 Nguyễn Kiệm, P.4, Q. Phú Nhuận, TP. Hồ Chí Minh</p>
+                <p>Toà nhà Innovation, lô 24, Công viên phần mềm Quang Trung, Quận 12, Hồ Chí Minh</p>
+                <p>(028) 3526 8799 – (028) 62523434</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p style="text-align: center; font-size: 15px; font-weight: 600;">FPT Polytechnic &copy; 2022. Assignment Web207.</p>
+    </footer>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+  integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+</script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+  integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+  integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+</script>
+</body>
+</html>

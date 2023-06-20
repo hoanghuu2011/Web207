@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trang chủ</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/angular.min.js"></script>
+  <script src="db/Subjects.js"></script>
+  <script src="js/myapp.js"></script>
+  <!-- <script src="js/angular-route.js"></script> -->
+  <link rel="stylesheet" href="fontawesome-free-6.2.1-web/css/all.min.css">
+  <link rel="shortcut icon" href="images/logo.png" />
+  <style>
+    footer>div>div:nth-child(2) h6 {
+      text-decoration: underline;
+      color: #f7941d;
+    }
+  </style>
+</head>
+<body ng-app="myApp">
+  <div class="container">
+    <div class="row bg-danger" style="height:80px; display: flex;align-items: center;justify-content: center;">
+      <div class="col float-left" style="font-size: 20px;">
+        <a href=""><img width="12%" src="images/FPT_Polytechnic.png"></a><a href="Trangchu.html"
+          style="padding-left: 18%;color: rgb(0, 0, 0);text-decoration: none; "><i
+            class="fa-solid fa-house-chimney"></i>Trang chủ
+          <a href="Khoahoc.html" style="padding-left: 3%;color: rgb(0, 0, 0);text-decoration: none;"><i
+              class="fa-solid fa-layer-group"></i>Môn học</a>
+          <a href="gioithieu.html" style="padding-left: 3%;color: rgb(0, 0, 0);text-decoration: none;"><i
+              class="fa-solid fa-bars"></i>Giới thiệu</a>
+          <a href="lienhe.html" style="padding-left: 3%;color: rgb(0, 0, 0);text-decoration: none;"><i
+              class="fa-solid fa-phone"></i>Liên hệ</a>
+              <a href="hoidap.html"
+            style="padding-left: 3%;color: rgb(0, 0, 0);text-decoration: none;"><i class="fa-solid fa-comments"></i>Hỏi
+            đáp</a><a href="login.html" style="padding-left: 3%;color: rgb(0, 0, 0);text-decoration: none;"><i
+              class="fa-solid fa-gears"></i>Đăng
+            nhập</a></a>
+      </div>
+    </div>
+    <div class="row" style="background-color: rgb(255, 255, 255);padding-top: 1%;">
+      <div class="col-9">
+        <div class="jumbotron">
+          <h2 class="displat-3">CAO ĐẲNG FPT POLYTECHNIC</h2>
+          <p class="lead">Hệ Cao đẳng thực hành thuộc Đại học FPT, còn gọi là FPT Polytechnic, được thực hiện đào tạo và
+            cấp bằng Cao đẳng nghề theo Quyết định của Tổng cục dạy nghề bắt đầu từ ngày 01/07/2010. Trường hướng tới
+            mục tiêu cung cấp kỹ năng nghề nghiệp chất lượng cao cho người học, đảm bảo được tính cạnh tranh trong môi
+            trường phát triển ngày càng cao.
+            Với nhận định nền kinh tế Việt Nam đang phát triển mạnh mẽ trong đó có sự đóng góp to lớn từ trên 500.000
+            doanh nghiệp vừa và nhỏ với từ 10 đến 200 nhân viên. FPT Polytechnic nhắm tới mục tiêu cung cấp nguồn nhân
+            lực được đào tạo tốt cho nhu cầu phát triển của không chỉ các doanh nghiệp lớn mà còn cho các doanh nghiệp
+            này.
+            Hướng tới người học chung trên toàn Việt Nam, chương trình cao đẳng thực hành của trường được thiết kế dựa
+            trên những kỹ năng thiết yếu nhất để làm việc và tương thích với các hệ thống đào tạo tiên tiến trên thế
+            giới.
+          </p>
+          <p class="lead">
+            <a class="btn-lg bg-danger text-white " href="gioithieu.html" role="button" style="text-decoration: none">Xem
+              thêm...</a>
+          </p>
+        </div>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d30670.025937961036!2d108.17647213232424!3d16.078289690270562!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x459e4bf5a2af323e!2zVHLGsOG7nW5nIENhbyDEkeG6s25nIEZQVCBQb2x5dGVjaG5pYyDEkMOgIE7hurVuZw!5e0!3m2!1svi!2s!4v1673448706004!5m2!1svi!2s"
+          width="970" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+
+      <div class="col-sm-3 mt-4">
+        <!--Category-->
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <span class="glyphicon glyphicon-th-list"></span>
+           <h4> <i class="fa-solid fa-list-check"></i>Danh mục các môn học</h4>
+         
+          <div class="list-group" ng-controller="subjectCtrl">
+            <div ng-repeat="sub in list_subject">
+              <a  class="list-group-item">{{sub.Name}}</a>
+            </div>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+  
+    <footer style="background-color: #192041; color: azure; font-size: small;">
+      <div class="row mt-4">
+        <div class="col-12 col-md-3 col-sm-12">
+          <a class="navbar-brand" href="">
+            <span>
+              <img src="images/FPT_Polytechnic.png" class="dark-logo"style="height:80px;margin-top: 3cm; padding-left: 0.5cm;" />
+            </span>
+          </a>
+        </div>
+        <div class="col-12 col-md-9  col-sm-12" style="margin-top:10px">
+          <h4>THÔNG TIN LIÊN HỆ</h4>
+          <p>
+            Trụ sở chính
+            Tòa nhà FPT Polytechnic, Phố Trịnh Văn Bô, Nam Từ Liêm, Hà Nội
+          </p>
+          <h4>Một vài cơ sở phổ biến</h4>
+          <div class="row">
+            <div class="col-sm-6">
+              <div>
+                <h6>Cơ sở Hà Nội</h6>
+                <p>Tòa nhà FPT Polytechnic, Phố Trịnh Văn Bô, Nam Từ Liêm, Hà Nội</p>
+                <p>(024) 7300 1955</p>
+              </div>
+              <div>
+                <h6>Cơ sở Đà Nẵng</h6>
+                <p>Số 137 Nguyễn Thị Thập, Phường Hòa Minh, Quận Liên Chiểu, TP. Đà Nẵng</p>
+                <p>(0236) 3710 999</p>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div>
+                <h6>Cơ sở Hồ Chí Minh</h6>
+                <p>391A Nam Kỳ Khởi Nghĩa, Q. 3, TP. Hồ Chí Minh</p>
+                <p>778/B1 Nguyễn Kiệm, P.4, Q. Phú Nhuận, TP. Hồ Chí Minh</p>
+                <p>Toà nhà Innovation, lô 24, Công viên phần mềm Quang Trung, Quận 12, Hồ Chí Minh</p>
+                <p>(028) 3526 8799 – (028) 62523434</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p style="text-align: center; font-size: 15px; font-weight: 600;">FPT Polytechnic &copy; 2022. Assignment Web207.</p>
+    </footer>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+  integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+</script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+  integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+  integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+</script>
+</body>
+
+</html>

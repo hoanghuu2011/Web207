@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="shortcut icon" href="/hinh/logo.png"/>
+    <script src="2.js"></script>
+    <title>Bai3</title>
+</head>
+<body ng-app="myApp">
+    <div class="container"ng-controller="Ctrl">
+        <div class="row" >
+            <div class="col-sm-6 mx-auto text-white">
+                <h4 class="card-header bg-success text-white">THÔNG TIN SINH VIÊN</h4>
+                <div class="bg-dark p-2">
+               <form>
+                <div class="form-group">
+                    <label >Họ và tên</label>
+                    <input ng-model="student.fullname"  class="form-control bg-dark text-white font-weight-bold" type="text" name="">
+                </div>
+                <div class="form-group">
+                    <label >Ngày sinh</label>
+                    <input ng-model="student.birthday" class="form-control  bg-dark text-white font-weight-bold" type="text" name="">
+                </div>
+                <div class="form-group">
+                    <label >Điểm</label>
+                    <input ng-model="student.marks" class="form-control  bg-dark text-danger  font-weight-bold" type="text" name="">
+                </div>
+                <button ng-click="save()" class="btn btn-info"ng-show="index == -1" >Thêm </button>
+                <button ng-click="cancel()" class="btn btn-info">Hủy</button>
+                <button ng-click="clear()" class="btn btn-info">Làm Mới</button>
+                <button  ng-click="update()" class="btn btn-success"ng-hide="index == -1" >Cập nhật</button>
+                <button ng-click="delete()" class="btn btn-danger" ng-hide="index == -1">Xoá</button>
+               </form>
+            </div>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-sm-6 mx-auto">
+                <table class="table table-bordered">
+                  <tbody>
+                    <tr class="bg-danger text-center text-white">
+                    <th>Họ và tên</th>
+                    <th style="width: 110px;">Ngày sinh</th>
+                    <th>Điểm</th>
+                    <th>Xếp loại</th>
+                    <th># </th>
+                    </tr>
+                    <tr ng-repeat ="sv in sv">
+                    <td>{{sv.fullname}}</td>
+                    <td>{{sv.birthday}}</td>
+                    <td>{{sv.marks}}</td>
+                    <td>
+                        <span ng-if="sv.marks < 5">Yếu/Kém</span>
+                        <span ng-if="sv.marks >= 5 && sv.marks <= 8">Trung bình/Khá</span>
+                        <span ng-if="sv.marks > 8">Giỏi/Xuất sắc</span>
+                    </td>
+                    <td class="text-danger">
+                        <a href="#" ng-click="edit($index)">Sửa</a></td>
+                    </tr>
+                  </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+   
+</body>
+</html>

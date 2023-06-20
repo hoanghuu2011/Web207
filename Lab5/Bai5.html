@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="shortcut icon" href="/hinh/logo.png"/>
+    <title>Bai5</title>
+    <style>
+        .card{
+            margin-top: 15px;
+        }
+        .card-header{
+            color: rgb(255, 250, 250);
+            background-color:#ee2828!important;
+        }
+    </style>
+</head>
+<body ng-app="myApp">
+    <div class="container"ng-controller="Ctrl">
+        <article class="p-2">
+        <h1 class="bg-dark text-white text-center p-3">DANH MỤC SẢN PHẨM</h1>
+        <hr class="bg-primary">
+        <div class="row" style="text-align: center;">
+         <div class="col-sm-3" ng-repeat="sc in list">
+            <div class="card">
+                <div class="card-header">
+                    {{sc.name}}
+                </div>
+                <div class="card-body">
+                  <img src="{{sc.photo}}" width ="180" height="200">
+                </div>
+                <div class="card-footer font-weight-bold" style="color: rgb(0, 0, 0);">
+                    {{sc.price}}
+                </div>
+            </div>
+            
+         </div>
+         
+        </div>
+        </article>
+    </div>
+    <script>
+        var app = angular.module("myApp", []);
+        app.controller("Ctrl", function ($scope) {
+        $scope.list=[
+            {
+                name:"Đồng hồ",
+                photo:"hinh/1.webp",
+                price:9999
+            },
+            {
+                name:"Máy tính",
+                photo:"hinh/mac.jpg",
+                price:9999
+            },
+            {
+                name:"Điện thoại",
+                photo:"hinh/iPhone-14-Pro-Max.jfif",
+                price:9999
+            },
+            {
+                name:"Máy ảnh",
+                photo:"hinh/1.webp",
+                price:9999
+            },
+            {
+                name:"Xe hơi",
+                photo:"hinh/vw-1835506__340.jpg",
+                price:9999
+            },
+            {
+                name:"Điều hòa",
+                photo:"hinh/dieuhoa.jpg",
+                price:9999
+            },
+            {
+                name:"Sam Sung",
+                photo:"hinh/samsung.jfif",
+                price:9999
+            },
+            {
+                name:"Siêu Xe",
+                photo:"hinh/car-5548242__340.jpg",
+                price:9999
+            },
+        ]
+        });
+    </script>
+</body>
+</html>
